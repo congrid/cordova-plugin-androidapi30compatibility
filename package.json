@@ -1,0 +1,12 @@
+{
+    "name": "cordova-plugin-androidapi30compatibility",
+    "displayName": "AndroidApi30CompatibilityPlugin",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Congrid Oy",
+    "license": "MIT"
+}

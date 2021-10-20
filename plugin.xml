@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-androidapi30compatibility"
+        version="0.0.1">
+    <name>AndroidApi30CompatibilityPlugin</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+
+    <js-module src="www/index.js" name="AndroidApi30CompatibilityPlugin">
+        <clobbers target="AndroidApi30CompatibilityPlugin" />
+    </js-module>
+
+    <config-file target="config.xml" parent="/*">
+        <feature name="AndroidApi30CompatibilityPlugin">
+            <param name="android-package" value="org.apache.cordova.plugin.AndroidApi30CompatibilityPlugin"/>
+            <param name="onload" value="true" />
+        </feature>
+    </config-file>
+
+    <!-- https://github.com/apache/cordova-plugin-camera/issues/673#issuecomment-875521098 -->
+    <config-file parent="/*" target="AndroidManifest.xml">
+        <queries>
+            <intent>
+                <action android:name="android.media.action.IMAGE_CAPTURE" />
+            </intent>
+            <intent>
+                <action android:name="android.intent.action.GET_CONTENT" />
+            </intent>
+        </queries>
+    </config-file>
+
+    <platform name="android">
+        <source-file src="src/android/AndroidApi30CompatibilityPlugin.java" target-dir="src/org/apache/cordova/plugin" />
+    </platform>
+</plugin>
